@@ -13,8 +13,9 @@ export default function CalendarPage() {
   const t = useTranslations('calendar');
   const { data: todayHijri } = useHijriDate();
 
-  const [year, setYear] = useState(1447);
-  const [month, setMonth] = useState(1);
+  // Start null - don't fetch until we know the current Hijri month
+  const [year, setYear] = useState<number | null>(null);
+  const [month, setMonth] = useState<number | null>(null);
   const [initialized, setInitialized] = useState(false);
   const [selectedDay, setSelectedDay] = useState<number | null>(null);
 
@@ -29,18 +30,22 @@ export default function CalendarPage() {
   const { month: monthData, festivals, isLoading } = useCalendarMonth(year, month);
 
   const todayGreg = todayHijri?.gregorian_date ?? '';
-  const hijriMonthName = t(`hijriMonth_${month}` as Parameters<typeof t>[0]);
+  const hijriMonthName = month !== null
+    ? t(`hijriMonth_${month}` as Parameters<typeof t>[0])
+    : '';
 
   function goPrev() {
+    if (year === null || month === null) return;
     setSelectedDay(null);
-    if (month === 1) { setMonth(12); setYear((y) => y - 1); }
-    else setMonth((m) => m - 1);
+    if (month === 1) { setMonth(12); setYear(year - 1); }
+    else setMonth(month - 1);
   }
 
   function goNext() {
+    if (year === null || month === null) return;
     setSelectedDay(null);
-    if (month === 12) { setMonth(1); setYear((y) => y + 1); }
-    else setMonth((m) => m + 1);
+    if (month === 12) { setMonth(1); setYear(year + 1); }
+    else setMonth(month + 1);
   }
 
   const selectedDayData = selectedDay !== null && monthData
@@ -49,6 +54,27 @@ export default function CalendarPage() {
   const selectedFestivals = selectedDay !== null
     ? festivals.filter((f) => f.hijri_day === selectedDay)
     : [];
+
+  // Show full loading skeleton until we know which month to display
+  if (year === null || month === null) {
+    return (
+      <div className="pt-2 pb-4">
+        <div className="flex items-center justify-between py-3">
+          <div className="w-9" />
+          <div className="text-center">
+            <div className="h-6 w-32 animate-pulse rounded bg-[var(--bg-card)]" />
+            <div className="h-4 w-20 mt-1 mx-auto animate-pulse rounded bg-[var(--bg-card)]" />
+          </div>
+          <div className="w-9" />
+        </div>
+        <div className="grid grid-cols-7 gap-1">
+          {Array.from({ length: 35 }).map((_, i) => (
+            <div key={i} className="h-14 animate-pulse rounded-lg bg-[var(--bg-card)]" />
+          ))}
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="pt-2 pb-4">
