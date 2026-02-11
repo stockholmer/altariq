@@ -1,0 +1,100 @@
+{
+  "app": {
+    "name": "Al Tariq",
+    "tagline": "G\u00FCnl\u00FCk namaz arkada\u015F\u0131n\u0131z"
+  },
+  "nav": {
+    "today": "Bug\u00FCn",
+    "calendar": "Takvim",
+    "qibla": "K\u0131ble",
+    "festivals": "Bayramlar",
+    "settings": "Ayarlar"
+  },
+  "today": {
+    "nextPrayer": "Sonraki namaz",
+    "inTime": "{prayer} {time} sonra",
+    "allPrayersPast": "T\u00FCm namazlar tamamland\u0131",
+    "fajr": "Fecir",
+    "sunrise": "G\u00FCne\u015F",
+    "dhuhr": "\u00D6\u011Fle",
+    "asr": "Ikindi",
+    "maghrib": "Ak\u015Fam",
+    "isha": "Yats\u0131",
+    "noLocation": "Namaz vakitlerini g\u00F6rmek i\u00E7in konumunuzu ayarlay\u0131n",
+    "detectLocation": "Konumumu bul",
+    "detecting": "Belirleniyor..."
+  },
+  "calendar": {
+    "title": "Hicri Takvim",
+    "today": "Bug\u00FCn",
+    "sun": "Paz",
+    "mon": "Pzt",
+    "tue": "Sal",
+    "wed": "\u00C7ar",
+    "thu": "Per",
+    "fri": "Cum",
+    "sat": "Cmt",
+    "ah": "H",
+    "eventsIn": "{month} etkinlikleri",
+    "noEventsMonth": "Bu ay etkinlik yok.",
+    "noEventsDay": "Bu g\u00FCn etkinlik yok.",
+    "hijriMonth_1": "Muharrem",
+    "hijriMonth_2": "Safer",
+    "hijriMonth_3": "Rebi\u00FClevvel",
+    "hijriMonth_4": "Rebi\u00FClahir",
+    "hijriMonth_5": "Cemaziyel evvel",
+    "hijriMonth_6": "Cemaziyel ahir",
+    "hijriMonth_7": "Recep",
+    "hijriMonth_8": "\u015Eaban",
+    "hijriMonth_9": "Ramazan",
+    "hijriMonth_10": "\u015Eevval",
+    "hijriMonth_11": "Zilkade",
+    "hijriMonth_12": "Zilhicce"
+  },
+  "qibla": {
+    "title": "K\u0131ble Y\u00F6n\u00FC",
+    "bearing": "Y\u00F6n: {degrees}\u00B0",
+    "distance": "Kabe'ye {km} km",
+    "enableCompass": "Pusulay\u0131 Etkinle\u015Ftir",
+    "compassUnsupported": "Bu cihazda pusula mevcut de\u011Fil",
+    "pointDevice": "Cihaz\u0131n\u0131z\u0131n \u00FCst k\u0131sm\u0131n\u0131 K\u0131ble'ye do\u011Fru tutun",
+    "noLocation": "\u00D6nce konumunuzu ayarlay\u0131n"
+  },
+  "festivals": {
+    "title": "Bayramlar",
+    "upcoming": "Yakla\u015Fan",
+    "thisYear": "Bu Y\u0131l",
+    "inDays": "{days} g\u00FCn sonra",
+    "tomorrow": "Yar\u0131n",
+    "today": "Bug\u00FCn",
+    "all": "T\u00FCm\u00FC",
+    "eid": "Bayram",
+    "fasting": "Oru\u00E7",
+    "hajj": "Hac",
+    "remembrance": "An\u0131m",
+    "night_worship": "Gece \u0130badeti",
+    "sacred_month": "Haram Ay"
+  },
+  "settings": {
+    "title": "Ayarlar",
+    "location": "Konum",
+    "detectLocation": "Konumumu bul",
+    "detecting": "Belirleniyor...",
+    "prayerConvention": "Namaz Hesaplama Y\u00F6ntemi",
+    "asrMethod": "Ikindi Hesaplamas\u0131",
+    "shafii": "\u015Eafii (standart)",
+    "hanafi": "Hanefi (ge\u00E7)",
+    "crescentCriterion": "Hilal Kriteri",
+    "language": "Dil",
+    "theme": "Tema",
+    "themeLight": "A\u00E7\u0131k",
+    "themeDark": "Koyu",
+    "themeSystem": "Sistem"
+  },
+  "common": {
+    "loading": "Y\u00FCkleniyor...",
+    "error": "Bir \u015Feyler ters gitti",
+    "retry": "Tekrar dene",
+    "offline": "\u00C7evrimd\u0131\u015F\u0131s\u0131n\u0131z"
+  }
+}

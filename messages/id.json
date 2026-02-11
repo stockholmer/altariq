@@ -1,0 +1,100 @@
+{
+  "app": {
+    "name": "Al Tariq",
+    "tagline": "Teman sholat harian Anda"
+  },
+  "nav": {
+    "today": "Hari Ini",
+    "calendar": "Kalender",
+    "qibla": "Kiblat",
+    "festivals": "Perayaan",
+    "settings": "Pengaturan"
+  },
+  "today": {
+    "nextPrayer": "Sholat berikutnya",
+    "inTime": "{prayer} dalam {time}",
+    "allPrayersPast": "Semua sholat selesai",
+    "fajr": "Subuh",
+    "sunrise": "Syuruq",
+    "dhuhr": "Dzuhur",
+    "asr": "Ashar",
+    "maghrib": "Maghrib",
+    "isha": "Isya",
+    "noLocation": "Atur lokasi Anda untuk melihat waktu sholat",
+    "detectLocation": "Deteksi lokasi saya",
+    "detecting": "Mendeteksi..."
+  },
+  "calendar": {
+    "title": "Kalender Hijri",
+    "today": "Hari Ini",
+    "sun": "Min",
+    "mon": "Sen",
+    "tue": "Sel",
+    "wed": "Rab",
+    "thu": "Kam",
+    "fri": "Jum",
+    "sat": "Sab",
+    "ah": "H",
+    "eventsIn": "Acara di {month}",
+    "noEventsMonth": "Tidak ada acara bulan ini.",
+    "noEventsDay": "Tidak ada acara pada hari ini.",
+    "hijriMonth_1": "Muharam",
+    "hijriMonth_2": "Safar",
+    "hijriMonth_3": "Rabiul Awal",
+    "hijriMonth_4": "Rabiul Akhir",
+    "hijriMonth_5": "Jumadil Awal",
+    "hijriMonth_6": "Jumadil Akhir",
+    "hijriMonth_7": "Rajab",
+    "hijriMonth_8": "Syakban",
+    "hijriMonth_9": "Ramadan",
+    "hijriMonth_10": "Syawal",
+    "hijriMonth_11": "Zulkaidah",
+    "hijriMonth_12": "Zulhijah"
+  },
+  "qibla": {
+    "title": "Arah Kiblat",
+    "bearing": "Bearing: {degrees}\u00B0",
+    "distance": "{km} km ke Ka'bah",
+    "enableCompass": "Aktifkan Kompas",
+    "compassUnsupported": "Kompas tidak tersedia di perangkat ini",
+    "pointDevice": "Arahkan bagian atas perangkat Anda ke arah Kiblat",
+    "noLocation": "Atur lokasi Anda terlebih dahulu"
+  },
+  "festivals": {
+    "title": "Perayaan",
+    "upcoming": "Mendatang",
+    "thisYear": "Tahun Ini",
+    "inDays": "dalam {days} hari",
+    "tomorrow": "Besok",
+    "today": "Hari Ini",
+    "all": "Semua",
+    "eid": "Hari Raya",
+    "fasting": "Puasa",
+    "hajj": "Haji",
+    "remembrance": "Peringatan",
+    "night_worship": "Ibadah Malam",
+    "sacred_month": "Bulan Suci"
+  },
+  "settings": {
+    "title": "Pengaturan",
+    "location": "Lokasi",
+    "detectLocation": "Deteksi lokasi saya",
+    "detecting": "Mendeteksi...",
+    "prayerConvention": "Metode Waktu Sholat",
+    "asrMethod": "Perhitungan Ashar",
+    "shafii": "Syafii (standar)",
+    "hanafi": "Hanafi (lebih siang)",
+    "crescentCriterion": "Kriteria Hilal",
+    "language": "Bahasa",
+    "theme": "Tema",
+    "themeLight": "Terang",
+    "themeDark": "Gelap",
+    "themeSystem": "Sistem"
+  },
+  "common": {
+    "loading": "Memuat...",
+    "error": "Terjadi kesalahan",
+    "retry": "Coba lagi",
+    "offline": "Anda sedang offline"
+  }
+}

@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-parchment: #faf6f1;
+  --color-dark-earth: #1a1412;
+  --color-card-light: #ffffff;
+  --color-card-dark: #2d2520;
+  --color-text-primary-light: #2d2319;
+  --color-text-primary-dark: #e8ddd0;
+  --color-text-secondary-light: #6b5c4d;
+  --color-text-secondary-dark: #a89880;
+  --color-accent: #c4956a;
+  --color-accent-dark: #d4a574;
+  --color-day-segment: #f5deb3;
+  --color-day-segment-dark: #3d3525;
+  --color-night-segment: #2a2440;
+  --color-night-segment-dark: #1a1528;
+  --color-eid: #c4956a;
+  --color-fasting: #7a8f6e;
+  --color-night-worship: #4a4270;
+  --color-hajj: #b08d57;
+  --color-remembrance: #8b7355;
+  --color-sacred: #6b8a8a;
+}
+
+:root {
+  --bg: var(--color-parchment);
+  --bg-card: var(--color-card-light);
+  --text-1: var(--color-text-primary-light);
+  --text-2: var(--color-text-secondary-light);
+  --accent: var(--color-accent);
+}
+
+.dark {
+  --bg: var(--color-dark-earth);
+  --bg-card: var(--color-card-dark);
+  --text-1: var(--color-text-primary-dark);
+  --text-2: var(--color-text-secondary-dark);
+  --accent: var(--color-accent-dark);
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text-1);
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[dir="rtl"] body {
+  font-family: 'IBM Plex Sans Arabic', system-ui, sans-serif;
+}
+
+/* Hide scrollbar for timeline */
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* PWA safe area */
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* Subtle geometric pattern (CSS only, no images) */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.03;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 40px,
+      var(--accent) 40px,
+      var(--accent) 41px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 40px,
+      var(--accent) 40px,
+      var(--accent) 41px
+    );
+  pointer-events: none;
+}

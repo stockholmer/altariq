@@ -1,0 +1,100 @@
+{
+  "app": {
+    "name": "Al Tariq",
+    "tagline": "Your daily prayer companion"
+  },
+  "nav": {
+    "today": "Today",
+    "calendar": "Calendar",
+    "qibla": "Qibla",
+    "festivals": "Festivals",
+    "settings": "Settings"
+  },
+  "today": {
+    "nextPrayer": "Next prayer",
+    "inTime": "{prayer} in {time}",
+    "allPrayersPast": "All prayers completed",
+    "fajr": "Fajr",
+    "sunrise": "Sunrise",
+    "dhuhr": "Dhuhr",
+    "asr": "Asr",
+    "maghrib": "Maghrib",
+    "isha": "Isha",
+    "noLocation": "Set your location to see prayer times",
+    "detectLocation": "Detect my location",
+    "detecting": "Detecting..."
+  },
+  "calendar": {
+    "title": "Hijri Calendar",
+    "today": "Today",
+    "sun": "Sun",
+    "mon": "Mon",
+    "tue": "Tue",
+    "wed": "Wed",
+    "thu": "Thu",
+    "fri": "Fri",
+    "sat": "Sat",
+    "ah": "AH",
+    "eventsIn": "Events in {month}",
+    "noEventsMonth": "No events this month.",
+    "noEventsDay": "No events on this day.",
+    "hijriMonth_1": "Muharram",
+    "hijriMonth_2": "Safar",
+    "hijriMonth_3": "Rabi al-Awwal",
+    "hijriMonth_4": "Rabi al-Thani",
+    "hijriMonth_5": "Jumada al-Ula",
+    "hijriMonth_6": "Jumada al-Thani",
+    "hijriMonth_7": "Rajab",
+    "hijriMonth_8": "Shaban",
+    "hijriMonth_9": "Ramadan",
+    "hijriMonth_10": "Shawwal",
+    "hijriMonth_11": "Dhul Qadah",
+    "hijriMonth_12": "Dhul Hijjah"
+  },
+  "qibla": {
+    "title": "Qibla Direction",
+    "bearing": "Bearing: {degrees}",
+    "distance": "{km} km to Kaaba",
+    "enableCompass": "Enable Compass",
+    "compassUnsupported": "Compass not available on this device",
+    "pointDevice": "Point the top of your device towards Qibla",
+    "noLocation": "Set your location first"
+  },
+  "festivals": {
+    "title": "Festivals",
+    "upcoming": "Upcoming",
+    "thisYear": "This Year",
+    "inDays": "in {days} days",
+    "tomorrow": "Tomorrow",
+    "today": "Today",
+    "all": "All",
+    "eid": "Eid",
+    "fasting": "Fasting",
+    "hajj": "Hajj",
+    "remembrance": "Remembrance",
+    "night_worship": "Night Worship",
+    "sacred_month": "Sacred Month"
+  },
+  "settings": {
+    "title": "Settings",
+    "location": "Location",
+    "detectLocation": "Detect my location",
+    "detecting": "Detecting...",
+    "prayerConvention": "Prayer Convention",
+    "asrMethod": "Asr Calculation",
+    "shafii": "Shafii (standard)",
+    "hanafi": "Hanafi (later)",
+    "crescentCriterion": "Crescent Criterion",
+    "language": "Language",
+    "theme": "Theme",
+    "themeLight": "Light",
+    "themeDark": "Dark",
+    "themeSystem": "System"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Something went wrong",
+    "retry": "Retry",
+    "offline": "You are offline"
+  }
+}
