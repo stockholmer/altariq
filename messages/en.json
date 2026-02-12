@@ -109,7 +109,8 @@
     "themeDark": "Dark",
     "themeSystem": "System",
     "aboutCalculations": "About Calculations",
-    "dateConverter": "Hijri-Gregorian Converter"
+    "dateConverter": "Hijri-Gregorian Converter",
+    "supportAlTariq": "Support Al Tariq"
   },
   "about": {
     "title": "About Calculations",
@@ -153,6 +154,12 @@
     "removeCity": "Remove",
     "maxCities": "Maximum 3 cities allowed.",
     "switchTo": "Switch to {city}"
+  },
+  "support": {
+    "title": "Support Al Tariq",
+    "description": "Al Tariq is a neutral astronomical calendar and prayer time utility. If you find it useful, you may support its continued maintenance. Contributions are voluntary and do not provide additional features.",
+    "button": "Support",
+    "note": "All features remain free regardless of contribution."
   },
   "common": {
     "loading": "Loading...",

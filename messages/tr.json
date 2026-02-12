@@ -109,7 +109,8 @@
     "themeDark": "Koyu",
     "themeSystem": "Sistem",
     "aboutCalculations": "Hesaplamalar Hakk\u0131nda",
-    "dateConverter": "Hicri-Miladi D\u00F6n\u00FC\u015Ft\u00FCr\u00FCc\u00FC"
+    "dateConverter": "Hicri-Miladi D\u00F6n\u00FC\u015Ft\u00FCr\u00FCc\u00FC",
+    "supportAlTariq": "Al Tariq'i Destekle"
   },
   "about": {
     "title": "Hesaplamalar Hakk\u0131nda",
@@ -153,6 +154,12 @@
     "removeCity": "Kaldir",
     "maxCities": "En fazla 3 sehre izin verilir.",
     "switchTo": "{city} sehrine ge\u00E7"
+  },
+  "support": {
+    "title": "Al Tariq'i Destekle",
+    "description": "Al Tariq, tarafs\u0131z bir astronomi takvimi ve namaz vakti arac\u0131d\u0131r. Faydal\u0131 buluyorsan\u0131z, bak\u0131m\u0131na destek olabilirsiniz. Katk\u0131lar g\u00F6n\u00FCll\u00FCd\u00FCr ve ek \u00F6zellik sa\u011Flamaz.",
+    "button": "Destekle",
+    "note": "Katk\u0131dan ba\u011F\u0131ms\u0131z olarak t\u00FCm \u00F6zellikler \u00FCcretsiz kal\u0131r."
   },
   "common": {
     "loading": "Y\u00FCkleniyor...",

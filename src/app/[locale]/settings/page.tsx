@@ -9,7 +9,7 @@ import CriterionPicker from '@/components/settings/CriterionPicker';
 import ThemeToggle from '@/components/settings/ThemeToggle';
 import LanguagePicker from '@/components/settings/LanguagePicker';
 import TrackedCities from '@/components/settings/TrackedCities';
-import { Info, ArrowUpDown } from 'lucide-react';
+import { Info, ArrowUpDown, Heart } from 'lucide-react';
 
 export default function SettingsPage() {
   const t = useTranslations('settings');
@@ -40,6 +40,13 @@ export default function SettingsPage() {
         >
           <Info size={16} className="text-[var(--accent)]" />
           <span>{t('aboutCalculations')}</span>
+        </Link>
+        <Link
+          href={`/${locale}/support`}
+          className="flex items-center gap-2 rounded-lg border border-[var(--accent)]/20 bg-[var(--bg-card)] p-3 text-sm transition-colors hover:border-[var(--accent)]/40"
+        >
+          <Heart size={16} className="text-[var(--accent)]" />
+          <span>{t('supportAlTariq')}</span>
         </Link>
       </div>
     </div>

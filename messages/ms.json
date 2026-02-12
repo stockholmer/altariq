@@ -109,7 +109,8 @@
     "themeDark": "Gelap",
     "themeSystem": "Sistem",
     "aboutCalculations": "Tentang Pengiraan",
-    "dateConverter": "Penukar Hijri-Gregorian"
+    "dateConverter": "Penukar Hijri-Gregorian",
+    "supportAlTariq": "Sokong Al Tariq"
   },
   "about": {
     "title": "Tentang Pengiraan",
@@ -153,6 +154,12 @@
     "removeCity": "Buang",
     "maxCities": "Maksimum 3 bandar dibenarkan.",
     "switchTo": "Tukar ke {city}"
+  },
+  "support": {
+    "title": "Sokong Al Tariq",
+    "description": "Al Tariq ialah utiliti kalendar astronomi dan waktu solat yang neutral. Jika anda mendapatinya berguna, anda boleh menyokong penyelenggaraannya. Sumbangan adalah sukarela dan tidak memberikan ciri tambahan.",
+    "button": "Sokong",
+    "note": "Semua ciri kekal percuma tanpa mengira sumbangan."
   },
   "common": {
     "loading": "Memuatkan...",
