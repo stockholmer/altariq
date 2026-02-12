@@ -50,7 +50,9 @@
     "hijriMonth_9": "Ramazan",
     "hijriMonth_10": "\u015Eevval",
     "hijriMonth_11": "Zilkade",
-    "hijriMonth_12": "Zilhicce"
+    "hijriMonth_12": "Zilhicce",
+    "viewHijri": "Hicri",
+    "viewGregorian": "Miladi"
   },
   "qibla": {
     "title": "K\u0131ble Y\u00F6n\u00FC",

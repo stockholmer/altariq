@@ -1,7 +1,7 @@
 'use client';
 
 import { useLocale } from 'next-intl';
-import type { HijriMonthDay } from '@/lib/types/calendar';
+import type { HijriMonthDay, CalendarViewMode, GregorianMonthDay } from '@/lib/types/calendar';
 import type { Festival } from '@/lib/types/festival';
 import { isLast10, isOddNight } from '@/lib/utils/ramadan';
 
@@ -23,6 +23,12 @@ const CATEGORY_DOT: Record<string, string> = {
   sacred_month: 'bg-sacred',
 };
 
+// Short Hijri month abbreviations (3-letter)
+const HIJRI_SHORT: Record<number, string> = {
+  1: 'Muh', 2: 'Saf', 3: 'Rb1', 4: 'Rb2', 5: 'Jm1', 6: 'Jm2',
+  7: 'Raj', 8: 'Sha', 9: 'Ram', 10: 'Shw', 11: 'DhQ', 12: 'DhH',
+};
+
 interface Props {
   day: HijriMonthDay;
   festivals: Festival[];
@@ -30,29 +36,47 @@ interface Props {
   isSelected: boolean;
   isRamadanMonth: boolean;
   onSelect: () => void;
+  mode?: CalendarViewMode;
+  gregDay?: GregorianMonthDay;
 }
 
-export default function DayCell({ day, festivals, isToday, isSelected, isRamadanMonth, onSelect }: Props) {
+export default function DayCell({ day, festivals, isToday, isSelected, isRamadanMonth, onSelect, mode = 'hijri', gregDay }: Props) {
   const locale = useLocale();
-  const gregDate = new Date(day.gregorian_date + 'T12:00:00');
-  const gregLabel = gregDate.toLocaleDateString(locale, { month: 'short', day: 'numeric' });
   const isFriday = day.weekday === 'Friday';
   const hasEvent = festivals.length > 0 || (day.events && day.events.length > 0);
   const topCategory = festivals[0]?.category;
 
-  const last10 = isRamadanMonth && isLast10(day.hijri_day);
-  const oddNight = isRamadanMonth && isOddNight(day.hijri_day);
+  const isRamadanDay = mode === 'gregorian'
+    ? (gregDay?.hijri_month === 9)
+    : isRamadanMonth;
+  const hijriDay = mode === 'gregorian' ? (gregDay?.hijri_day ?? 0) : day.hijri_day;
+  const last10 = isRamadanDay && isLast10(hijriDay);
+  const oddNight = isRamadanDay && isOddNight(hijriDay);
 
   // Background classes
   let bgClass = '';
   if (isSelected) {
     bgClass = 'ring-2 ring-[var(--accent)] bg-[var(--accent)]/15';
-  } else if (isRamadanMonth && !hasEvent) {
+  } else if (isRamadanDay && !hasEvent) {
     bgClass = 'bg-fasting/8 hover:bg-fasting/15';
   } else if (hasEvent && !isSelected) {
     bgClass = CATEGORY_BG[topCategory] ?? 'bg-[var(--accent)]/8';
   } else {
     bgClass = 'hover:bg-[var(--accent)]/5';
+  }
+
+  // Primary and secondary labels
+  let primaryNumber: number;
+  let secondaryLabel: string;
+
+  if (mode === 'gregorian' && gregDay) {
+    primaryNumber = gregDay.gregorian_day;
+    const shortMonth = HIJRI_SHORT[gregDay.hijri_month] ?? '';
+    secondaryLabel = `${gregDay.hijri_day} ${shortMonth}`;
+  } else {
+    primaryNumber = day.hijri_day;
+    const gregDate = new Date(day.gregorian_date + 'T12:00:00');
+    secondaryLabel = gregDate.toLocaleDateString(locale, { month: 'short', day: 'numeric' });
   }
 
   return (
@@ -67,9 +91,9 @@ export default function DayCell({ day, festivals, isToday, isSelected, isRamadan
         ${isToday || isSelected ? 'text-[var(--accent)]' : ''}
         ${isFriday && !isToday && !isSelected ? 'text-fasting' : ''}
       `}>
-        {day.hijri_day}
+        {primaryNumber}
       </span>
-      <span className="text-[9px] leading-tight text-[var(--text-2)]">{gregLabel}</span>
+      <span className="text-[9px] leading-tight text-[var(--text-2)]">{secondaryLabel}</span>
       <div className="mt-0.5 flex gap-0.5 items-center">
         {festivals.slice(0, 3).map((f, i) => (
           <span key={i} className={`h-1.5 w-1.5 rounded-full ${CATEGORY_DOT[f.category] ?? 'bg-[var(--accent)]'}`} />

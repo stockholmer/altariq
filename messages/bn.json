@@ -50,7 +50,9 @@
     "hijriMonth_9": "\u09B0\u09AE\u099C\u09BE\u09A8",
     "hijriMonth_10": "\u09B6\u09BE\u0993\u09AF\u09BC\u09BE\u09B2",
     "hijriMonth_11": "\u099C\u09BF\u09B2\u0995\u09CD\u09AC\u09A6",
-    "hijriMonth_12": "\u099C\u09BF\u09B2\u09B9\u099C"
+    "hijriMonth_12": "\u099C\u09BF\u09B2\u09B9\u099C",
+    "viewHijri": "\u09B9\u09BF\u099C\u09B0\u09BF",
+    "viewGregorian": "\u0997\u09CD\u09B0\u09C7\u0997\u09B0\u09BF\u09AF\u09BC\u09BE\u09A8"
   },
   "qibla": {
     "title": "\u0995\u09BF\u09AC\u09B2\u09BE\u09B0 \u09A6\u09BF\u0995",

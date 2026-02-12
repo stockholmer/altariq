@@ -50,7 +50,9 @@
     "hijriMonth_9": "Ramadan",
     "hijriMonth_10": "Shawwal",
     "hijriMonth_11": "Dhul Qadah",
-    "hijriMonth_12": "Dhul Hijjah"
+    "hijriMonth_12": "Dhul Hijjah",
+    "viewHijri": "Hijri",
+    "viewGregorian": "Gregorian"
   },
   "qibla": {
     "title": "Qibla Direction",

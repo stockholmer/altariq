@@ -50,7 +50,9 @@
     "hijriMonth_9": "Ramadan",
     "hijriMonth_10": "Syawal",
     "hijriMonth_11": "Zulkaedah",
-    "hijriMonth_12": "Zulhijah"
+    "hijriMonth_12": "Zulhijah",
+    "viewHijri": "Hijri",
+    "viewGregorian": "Masihi"
   },
   "qibla": {
     "title": "Arah Kiblat",

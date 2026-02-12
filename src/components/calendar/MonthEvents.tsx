@@ -2,7 +2,7 @@
 
 import { Star } from 'lucide-react';
 import { useTranslations, useLocale } from 'next-intl';
-import type { HijriMonth } from '@/lib/types/calendar';
+import type { HijriMonth, CalendarViewMode } from '@/lib/types/calendar';
 import type { Festival } from '@/lib/types/festival';
 
 const CATEGORY_BADGE: Record<string, string> = {
@@ -38,9 +38,13 @@ interface Props {
   hijriMonthName: string;
   selectedDay: number | null;
   onSelectDay: (day: number) => void;
+  mode?: CalendarViewMode;
+  gregMonthLabel?: string;
+  selectedDate?: string | null;
+  onSelectDate?: (date: string) => void;
 }
 
-export default function MonthEvents({ month, festivals, hijriMonthName, selectedDay, onSelectDay }: Props) {
+export default function MonthEvents({ month, festivals, hijriMonthName, selectedDay, onSelectDay, mode = 'hijri', gregMonthLabel, selectedDate, onSelectDate }: Props) {
   const tc = useTranslations('calendar');
   const tf = useTranslations('festivals');
   const locale = useLocale();
@@ -83,7 +87,11 @@ export default function MonthEvents({ month, festivals, hijriMonthName, selected
     }
   }
 
-  rows.sort((a, b) => a.hijriDay - b.hijriDay);
+  if (mode === 'gregorian') {
+    rows.sort((a, b) => a.gregorianDate.localeCompare(b.gregorianDate));
+  } else {
+    rows.sort((a, b) => a.hijriDay - b.hijriDay);
+  }
 
   if (rows.length === 0) {
     return (
@@ -93,10 +101,14 @@ export default function MonthEvents({ month, festivals, hijriMonthName, selected
     );
   }
 
+  const headerLabel = mode === 'gregorian' && gregMonthLabel
+    ? tc('eventsIn', { month: gregMonthLabel })
+    : tc('eventsIn', { month: hijriMonthName });
+
   return (
     <div className="mt-4">
       <h3 className="text-sm font-semibold text-[var(--text-2)] mb-2">
-        {tc('eventsIn', { month: hijriMonthName })}
+        {headerLabel}
       </h3>
       <div className="space-y-2">
         {rows.map((ev, i) => {
@@ -104,17 +116,38 @@ export default function MonthEvents({ month, festivals, hijriMonthName, selected
             .toLocaleDateString(locale, { month: 'short', day: 'numeric' });
           const catKey = CATEGORY_KEYS[ev.category];
           const catLabel = catKey ? tf(catKey as Parameters<typeof tf>[0]) : ev.category;
+
+          const isSelectedRow = mode === 'gregorian'
+            ? selectedDate === ev.gregorianDate
+            : selectedDay === ev.hijriDay;
+
+          const handleClick = () => {
+            if (mode === 'gregorian' && onSelectDate) {
+              onSelectDate(ev.gregorianDate);
+            } else {
+              onSelectDay(ev.hijriDay);
+            }
+          };
+
           return (
             <button
               key={i}
-              onClick={() => onSelectDay(ev.hijriDay)}
+              onClick={handleClick}
               className={`w-full rounded-xl bg-[var(--bg-card)] p-3 text-left transition-colors flex items-start gap-3
-                ${selectedDay === ev.hijriDay ? 'ring-2 ring-[var(--accent)]' : 'hover:bg-[var(--accent)]/5'}
+                ${isSelectedRow ? 'ring-2 ring-[var(--accent)]' : 'hover:bg-[var(--accent)]/5'}
               `}
             >
               <div className="flex flex-col items-center shrink-0 w-10">
-                <span className="text-lg font-bold text-[var(--accent)]">{ev.hijriDay}</span>
-                <span className="text-[10px] text-[var(--text-2)]">{gregLabel}</span>
+                {mode === 'gregorian' ? (
+                  <>
+                    <span className="text-lg font-bold text-[var(--accent)]">{gregLabel}</span>
+                  </>
+                ) : (
+                  <>
+                    <span className="text-lg font-bold text-[var(--accent)]">{ev.hijriDay}</span>
+                    <span className="text-[10px] text-[var(--text-2)]">{gregLabel}</span>
+                  </>
+                )}
               </div>
               <div className="min-w-0 flex-1">
                 <div className="flex items-center gap-2 flex-wrap">

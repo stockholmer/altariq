@@ -32,3 +32,22 @@ export interface HijriMonth {
   days: HijriMonthDay[];
   criterion: string;
 }
+
+export type CalendarViewMode = 'hijri' | 'gregorian';
+
+export interface GregorianMonthDay {
+  gregorian_date: string;
+  gregorian_day: number;
+  weekday: string;
+  hijri_year: number;
+  hijri_month: number;
+  hijri_day: number;
+  hijri_month_name: string;
+  events?: HijriEvent[];
+}
+
+export interface GregorianMonth {
+  year: number;
+  month: number; // 1-12
+  days: GregorianMonthDay[];
+}
