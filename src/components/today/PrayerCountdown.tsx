@@ -3,6 +3,7 @@
 import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
 import { useCountdown } from '@/lib/hooks/useCountdown';
+import { useRamadanStatus } from '@/lib/hooks/useRamadanStatus';
 import { formatCountdown } from '@/lib/utils/time';
 import type { PrayerName } from '@/lib/types/prayer';
 
@@ -14,7 +15,9 @@ interface Props {
 
 export default function PrayerCountdown({ nextPrayer, nextTime, timezone }: Props) {
   const t = useTranslations('today');
+  const tRamadan = useTranslations('ramadan');
   const secondsLeft = useCountdown(nextTime, timezone);
+  const ramadan = useRamadanStatus();
 
   if (!nextPrayer || !nextTime) {
     return (
@@ -24,6 +27,12 @@ export default function PrayerCountdown({ nextPrayer, nextTime, timezone }: Prop
     );
   }
 
+  // During Ramadan, show "Iftar" instead of "Maghrib"
+  const isIftarCountdown = ramadan.active && ramadan.beforeIftar && nextPrayer === 'maghrib';
+  const displayLabel = isIftarCountdown
+    ? tRamadan('iftarIn', { countdown: '' }).replace(/\s*$/, '').replace(/\s+in\s*$/, '')
+    : t(nextPrayer);
+
   return (
     <motion.div
       className="relative py-6 text-center"
@@ -32,13 +41,17 @@ export default function PrayerCountdown({ nextPrayer, nextTime, timezone }: Prop
       transition={{ duration: 0.4, ease: 'easeOut' }}
     >
       {/* Subtle glow behind countdown */}
-      <div className="absolute inset-0 mx-auto w-48 rounded-full bg-[var(--accent)]/5 blur-2xl" />
+      <div className={`absolute inset-0 mx-auto w-48 rounded-full blur-2xl ${
+        isIftarCountdown ? 'bg-fasting/10' : 'bg-[var(--accent)]/5'
+      }`} />
 
       <p className="relative text-sm uppercase tracking-widest text-[var(--text-2)]">
         {t('nextPrayer')}
       </p>
-      <p className="relative mt-1 text-3xl font-bold text-[var(--accent)]">
-        {t(nextPrayer)}
+      <p className={`relative mt-1 text-3xl font-bold ${
+        isIftarCountdown ? 'text-fasting' : 'text-[var(--accent)]'
+      }`}>
+        {isIftarCountdown ? 'Iftar' : t(nextPrayer)}
       </p>
       <p className="relative mt-2 font-mono text-2xl tabular-nums">
         {formatCountdown(secondsLeft)}

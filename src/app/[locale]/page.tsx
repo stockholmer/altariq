@@ -10,6 +10,9 @@ import PathTimeline from '@/components/today/PathTimeline';
 import PrayerCountdown from '@/components/today/PrayerCountdown';
 import HijriDateCard from '@/components/today/HijriDateCard';
 import EventBanner from '@/components/today/EventBanner';
+import TransparencyFooter from '@/components/today/TransparencyFooter';
+import RamadanBanner from '@/components/today/RamadanBanner';
+import CityChips from '@/components/today/CityChips';
 import { MapPin } from 'lucide-react';
 import PageTransition from '@/components/layout/PageTransition';
 
@@ -61,14 +64,17 @@ export default function TodayPage() {
   return (
     <PageTransition>
       <div className="space-y-4 pt-2">
+        <CityChips />
         <HijriDateCard />
         <EventBanner />
+        <RamadanBanner />
         <PrayerCountdown
           nextPrayer={nextPrayerName}
           nextTime={nextPrayerTime}
           timezone={prayers.timezone}
         />
         <PathTimeline prayers={prayers} />
+        <TransparencyFooter />
       </div>
     </PageTransition>
   );

@@ -22,7 +22,8 @@
     "isha": "Isyak",
     "noLocation": "Tetapkan lokasi anda untuk melihat waktu solat",
     "detectLocation": "Kesan lokasi saya",
-    "detecting": "Mengesan..."
+    "detecting": "Mengesan...",
+    "trustLine": "{convention} | {asr} Asar | {criterion} hilal"
   },
   "calendar": {
     "title": "Kalendar Hijri",
@@ -58,7 +59,17 @@
     "enableCompass": "Aktifkan Kompas",
     "compassUnsupported": "Kompas tidak tersedia pada peranti ini",
     "pointDevice": "Halakan bahagian atas peranti anda ke arah Kiblat",
-    "noLocation": "Tetapkan lokasi anda dahulu"
+    "noLocation": "Tetapkan lokasi anda dahulu",
+    "calibrationTip": "Gerakkan peranti anda dalam bentuk angka 8 untuk menentukur kompas.",
+    "accuracyDisclaimer": "Bacaan kompas adalah anggaran. Sahkan dengan kompas fizikal untuk ketepatan.",
+    "cardinal_N": "Utara",
+    "cardinal_NE": "Timur Laut",
+    "cardinal_E": "Timur",
+    "cardinal_SE": "Tenggara",
+    "cardinal_S": "Selatan",
+    "cardinal_SW": "Barat Daya",
+    "cardinal_W": "Barat",
+    "cardinal_NW": "Barat Laut"
   },
   "festivals": {
     "title": "Perayaan",
@@ -87,9 +98,59 @@
     "crescentCriterion": "Kriteria Anak Bulan",
     "language": "Bahasa",
     "theme": "Tema",
+    "searchCity": "Cari bandar atau negara...",
+    "noCityFound": "Bandar tidak ditemui. Gunakan kesan lokasi.",
+    "presets": "Pratetap",
+    "presetsHint": "Pilih bandar untuk tetapan konvensyen solat dan kriteria anak bulan secara automatik.",
+    "allRegions": "Semua",
     "themeLight": "Cerah",
     "themeDark": "Gelap",
-    "themeSystem": "Sistem"
+    "themeSystem": "Sistem",
+    "aboutCalculations": "Tentang Pengiraan",
+    "dateConverter": "Penukar Hijri-Gregorian"
+  },
+  "about": {
+    "title": "Tentang Pengiraan",
+    "convention": "Konvensyen",
+    "fajrAngle": "Subuh",
+    "ishaAngle": "Isyak",
+    "prayerTimesTitle": "Waktu Solat",
+    "prayerTimesBody": "Waktu solat dikira menggunakan geometri suria. Subuh dan Isyak bergantung pada sudut matahari di bawah ufuk, yang berbeza mengikut konvensyen. Organisasi yang berbeza menggunakan sudut yang sedikit berbeza, menghasilkan perbezaan beberapa minit antara kaedah.",
+    "asrTitle": "Kiraan Asar",
+    "asrBody": "Kaedah Syafie memulakan Asar apabila bayang objek sama dengan ketinggiannya ditambah bayang tengah hari (faktor bayang 1). Kaedah Hanafi memulakan apabila bayang sama dengan dua kali ketinggian objek ditambah bayang tengah hari (faktor bayang 2), menghasilkan waktu Asar yang lebih lewat.",
+    "crescentTitle": "Kriteria Anak Bulan",
+    "crescentBody": "Bulan Islam bermula dengan penampakan anak bulan baru. Pihak berkuasa yang berbeza menggunakan kriteria keterlihatan yang berbeza: Umm al-Qura menggunakan pengiraan untuk Mekah, ISNA menggunakan pengiraan astronomi untuk Amerika Utara, MABIMS menggunakan ambang ketinggian/elongasi untuk Asia Tenggara, dan lain-lain menggunakan standard serantau masing-masing.",
+    "hijriTitle": "Kalendar Hijri",
+    "hijriBody": "Kalendar Hijri adalah kalendar lunar tulen 12 bulan. Pengiraan astronomi meramalkan bila anak bulan sepatutnya kelihatan, tetapi penampakan sebenar mungkin berbeza 1-2 hari disebabkan cuaca dan keadaan setempat. Kaedah jadual menggunakan kitaran aritmetik tetap sebagai sandaran.",
+    "disclaimer": "Aplikasi ini menyediakan pengiraan astronomi sahaja. Untuk hukum agama, rujuk pihak berkuasa tempatan anda."
+  },
+  "ramadan": {
+    "iftarIn": "Iftar dalam {countdown}",
+    "suhoorAt": "Sahur berakhir pada {time}",
+    "last10": "10 Malam Terakhir",
+    "oddNight": "Malam Ganjil",
+    "ramadanDay": "Hari {day} Ramadan",
+    "ramadanMubarak": "Ramadan Mubarak"
+  },
+  "converter": {
+    "title": "Penukar Tarikh",
+    "hijriToGregorian": "Hijri ke Gregorian",
+    "gregorianToHijri": "Gregorian ke Hijri",
+    "convert": "Tukar",
+    "day": "Hari",
+    "month": "Bulan",
+    "year": "Tahun",
+    "result": "Keputusan",
+    "events": "Acara pada tarikh ini",
+    "noEvents": "Tiada acara pada tarikh ini.",
+    "note": "Tarikh berdasarkan kriteria {criterion} dan mungkin berbeza 1-2 hari."
+  },
+  "cities": {
+    "trackedCities": "Bandar Dijejak",
+    "addCity": "Tambah Bandar",
+    "removeCity": "Buang",
+    "maxCities": "Maksimum 3 bandar dibenarkan.",
+    "switchTo": "Tukar ke {city}"
   },
   "common": {
     "loading": "Memuatkan...",

@@ -52,6 +52,36 @@ test.describe('Settings Page', () => {
     await expect(page.getByRole('button', { name: 'Bahasa Indonesia' })).toBeVisible();
   });
 
+  test('city search shows results and selects city', async ({ page }) => {
+    await page.goto('/en/settings');
+    const searchInput = page.getByPlaceholder('Search city or country...');
+    await expect(searchInput).toBeVisible();
+    await searchInput.fill('Mecca');
+    // Should show dropdown with Mecca result
+    await expect(page.getByRole('button', { name: /Mecca.*Saudi Arabia/ })).toBeVisible({ timeout: 3000 });
+    await page.getByRole('button', { name: /Mecca.*Saudi Arabia/ }).click();
+    // Should set location and show it
+    await expect(page.getByText('Mecca, Saudi Arabia')).toBeVisible();
+    await expect(page.getByText('21.42, 39.83')).toBeVisible();
+  });
+
+  test('city search filters by country', async ({ page }) => {
+    await page.goto('/en/settings');
+    const searchInput = page.getByPlaceholder('Search city or country...');
+    await searchInput.fill('Pakistan');
+    // Should show multiple Pakistani cities
+    await expect(page.getByRole('button', { name: /Islamabad/ })).toBeVisible({ timeout: 3000 });
+    await expect(page.getByRole('button', { name: /Karachi.*Pakistan/ })).toBeVisible();
+    await expect(page.getByRole('button', { name: /Lahore.*Pakistan/ })).toBeVisible();
+  });
+
+  test('city search shows no results message', async ({ page }) => {
+    await page.goto('/en/settings');
+    const searchInput = page.getByPlaceholder('Search city or country...');
+    await searchInput.fill('xyznonexistent');
+    await expect(page.getByText('City not found')).toBeVisible({ timeout: 3000 });
+  });
+
   test('shows location info when pre-set', async ({ page }) => {
     await page.goto('/en/settings');
     await page.evaluate(() => {

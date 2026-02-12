@@ -25,6 +25,17 @@ export function computeQiblaBearing(lat: number, lon: number): number {
 }
 
 /**
+ * Convert bearing degrees to 8-point cardinal direction.
+ */
+const CARDINALS = ['N', 'NE', 'E', 'SE', 'S', 'SW', 'W', 'NW'] as const;
+export type Cardinal = (typeof CARDINALS)[number];
+
+export function bearingToCardinal(degrees: number): Cardinal {
+  const idx = Math.round(((degrees % 360) + 360) % 360 / 45) % 8;
+  return CARDINALS[idx];
+}
+
+/**
  * Compute great-circle distance to Kaaba in km.
  */
 export function distanceToKaaba(lat: number, lon: number): number {

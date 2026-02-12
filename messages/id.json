@@ -22,7 +22,8 @@
     "isha": "Isya",
     "noLocation": "Atur lokasi Anda untuk melihat waktu sholat",
     "detectLocation": "Deteksi lokasi saya",
-    "detecting": "Mendeteksi..."
+    "detecting": "Mendeteksi...",
+    "trustLine": "{convention} | {asr} Ashar | {criterion} hilal"
   },
   "calendar": {
     "title": "Kalender Hijri",
@@ -58,7 +59,17 @@
     "enableCompass": "Aktifkan Kompas",
     "compassUnsupported": "Kompas tidak tersedia di perangkat ini",
     "pointDevice": "Arahkan bagian atas perangkat Anda ke arah Kiblat",
-    "noLocation": "Atur lokasi Anda terlebih dahulu"
+    "noLocation": "Atur lokasi Anda terlebih dahulu",
+    "calibrationTip": "Gerakkan perangkat Anda dalam bentuk angka 8 untuk mengkalibrasi kompas.",
+    "accuracyDisclaimer": "Pembacaan kompas bersifat perkiraan. Verifikasi dengan kompas fisik untuk ketepatan.",
+    "cardinal_N": "Utara",
+    "cardinal_NE": "Timur Laut",
+    "cardinal_E": "Timur",
+    "cardinal_SE": "Tenggara",
+    "cardinal_S": "Selatan",
+    "cardinal_SW": "Barat Daya",
+    "cardinal_W": "Barat",
+    "cardinal_NW": "Barat Laut"
   },
   "festivals": {
     "title": "Perayaan",
@@ -87,9 +98,59 @@
     "crescentCriterion": "Kriteria Hilal",
     "language": "Bahasa",
     "theme": "Tema",
+    "searchCity": "Cari kota atau negara...",
+    "noCityFound": "Kota tidak ditemukan. Gunakan deteksi lokasi.",
+    "presets": "Prasetel",
+    "presetsHint": "Pilih kota untuk mengatur konvensi salat dan kriteria hilal secara otomatis.",
+    "allRegions": "Semua",
     "themeLight": "Terang",
     "themeDark": "Gelap",
-    "themeSystem": "Sistem"
+    "themeSystem": "Sistem",
+    "aboutCalculations": "Tentang Perhitungan",
+    "dateConverter": "Konverter Hijri-Gregorian"
+  },
+  "about": {
+    "title": "Tentang Perhitungan",
+    "convention": "Konvensi",
+    "fajrAngle": "Subuh",
+    "ishaAngle": "Isya",
+    "prayerTimesTitle": "Waktu Sholat",
+    "prayerTimesBody": "Waktu sholat dihitung menggunakan geometri matahari. Subuh dan Isya bergantung pada sudut matahari di bawah cakrawala, yang bervariasi menurut konvensi. Organisasi yang berbeda menggunakan sudut yang sedikit berbeda, menghasilkan perbedaan beberapa menit antar metode.",
+    "asrTitle": "Perhitungan Ashar",
+    "asrBody": "Metode Syafii memulai Ashar ketika bayangan benda sama dengan tingginya ditambah bayangan saat tengah hari (faktor bayangan 1). Metode Hanafi memulai ketika bayangan sama dengan dua kali tinggi benda ditambah bayangan tengah hari (faktor bayangan 2), menghasilkan waktu Ashar yang lebih siang.",
+    "crescentTitle": "Kriteria Hilal",
+    "crescentBody": "Bulan Islam dimulai dengan terlihatnya hilal baru. Otoritas yang berbeda menerapkan kriteria visibilitas yang berbeda: Umm al-Qura menggunakan perhitungan untuk Mekah, ISNA menggunakan perhitungan astronomi untuk Amerika Utara, MABIMS menggunakan ambang batas ketinggian/elongasi untuk Asia Tenggara, dan lainnya menggunakan standar regional masing-masing.",
+    "hijriTitle": "Kalender Hijri",
+    "hijriBody": "Kalender Hijri adalah kalender lunar murni 12 bulan. Perhitungan astronomi memprediksi kapan hilal seharusnya terlihat, tetapi pengamatan aktual bisa berbeda 1-2 hari karena cuaca dan kondisi lokal. Metode tabulasi menggunakan siklus aritmetika tetap sebagai cadangan.",
+    "disclaimer": "Aplikasi ini hanya menyediakan perhitungan astronomi. Untuk hukum agama, konsultasikan dengan otoritas setempat Anda."
+  },
+  "ramadan": {
+    "iftarIn": "Iftar dalam {countdown}",
+    "suhoorAt": "Sahur berakhir pukul {time}",
+    "last10": "10 Malam Terakhir",
+    "oddNight": "Malam Ganjil",
+    "ramadanDay": "Hari ke-{day} Ramadan",
+    "ramadanMubarak": "Ramadan Mubarak"
+  },
+  "converter": {
+    "title": "Konverter Tanggal",
+    "hijriToGregorian": "Hijri ke Gregorian",
+    "gregorianToHijri": "Gregorian ke Hijri",
+    "convert": "Konversi",
+    "day": "Hari",
+    "month": "Bulan",
+    "year": "Tahun",
+    "result": "Hasil",
+    "events": "Acara pada tanggal ini",
+    "noEvents": "Tidak ada acara pada tanggal ini.",
+    "note": "Tanggal berdasarkan kriteria {criterion} dan dapat berbeda 1-2 hari."
+  },
+  "cities": {
+    "trackedCities": "Kota yang Dilacak",
+    "addCity": "Tambah Kota",
+    "removeCity": "Hapus",
+    "maxCities": "Maksimal 3 kota diperbolehkan.",
+    "switchTo": "Pindah ke {city}"
   },
   "common": {
     "loading": "Memuat...",

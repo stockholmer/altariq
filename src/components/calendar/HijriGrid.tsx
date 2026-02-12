@@ -4,6 +4,7 @@ import { useTranslations } from 'next-intl';
 import DayCell from './DayCell';
 import type { HijriMonth } from '@/lib/types/calendar';
 import type { Festival } from '@/lib/types/festival';
+import { isRamadan } from '@/lib/utils/ramadan';
 
 const WEEKDAYS = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'] as const;
 const WEEKDAY_INDEX: Record<string, number> = {
@@ -22,6 +23,7 @@ export default function HijriGrid({ month, festivals, todayGreg, selectedDay, on
   const t = useTranslations('calendar');
 
   const firstDayWeekday = WEEKDAY_INDEX[month.days[0]?.weekday] ?? 0;
+  const isRamadanMonth = isRamadan(month.hijri_month);
 
   return (
     <div>
@@ -48,6 +50,7 @@ export default function HijriGrid({ month, festivals, todayGreg, selectedDay, on
               festivals={dayFestivals}
               isToday={isToday}
               isSelected={selectedDay === day.hijri_day}
+              isRamadanMonth={isRamadanMonth}
               onSelect={() => onSelectDay(day.hijri_day)}
             />
           );

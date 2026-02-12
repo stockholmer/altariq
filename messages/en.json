@@ -22,7 +22,8 @@
     "isha": "Isha",
     "noLocation": "Set your location to see prayer times",
     "detectLocation": "Detect my location",
-    "detecting": "Detecting..."
+    "detecting": "Detecting...",
+    "trustLine": "{convention} | {asr} Asr | {criterion} crescent"
   },
   "calendar": {
     "title": "Hijri Calendar",
@@ -58,7 +59,17 @@
     "enableCompass": "Enable Compass",
     "compassUnsupported": "Compass not available on this device",
     "pointDevice": "Point the top of your device towards Qibla",
-    "noLocation": "Set your location first"
+    "noLocation": "Set your location first",
+    "calibrationTip": "Move your device in a figure-8 to calibrate the compass.",
+    "accuracyDisclaimer": "Compass readings are approximate. Verify with a physical compass for precision.",
+    "cardinal_N": "North",
+    "cardinal_NE": "Northeast",
+    "cardinal_E": "East",
+    "cardinal_SE": "Southeast",
+    "cardinal_S": "South",
+    "cardinal_SW": "Southwest",
+    "cardinal_W": "West",
+    "cardinal_NW": "Northwest"
   },
   "festivals": {
     "title": "Festivals",
@@ -87,9 +98,59 @@
     "crescentCriterion": "Crescent Criterion",
     "language": "Language",
     "theme": "Theme",
+    "searchCity": "Search city or country...",
+    "noCityFound": "City not found. Use detect location instead.",
+    "presets": "Presets",
+    "presetsHint": "Select a city to auto-configure prayer convention and crescent criterion.",
+    "allRegions": "All",
     "themeLight": "Light",
     "themeDark": "Dark",
-    "themeSystem": "System"
+    "themeSystem": "System",
+    "aboutCalculations": "About Calculations",
+    "dateConverter": "Hijri-Gregorian Converter"
+  },
+  "about": {
+    "title": "About Calculations",
+    "convention": "Convention",
+    "fajrAngle": "Fajr",
+    "ishaAngle": "Isha",
+    "prayerTimesTitle": "Prayer Times",
+    "prayerTimesBody": "Prayer times are calculated using solar geometry. Fajr and Isha depend on the sun's angle below the horizon, which varies by convention. Different organizations use slightly different angles, resulting in a few minutes' difference between methods.",
+    "asrTitle": "Asr Calculation",
+    "asrBody": "The Shafi'i method begins Asr when an object's shadow equals its height plus its noon shadow (shadow factor 1). The Hanafi method begins when the shadow equals twice the object's height plus its noon shadow (shadow factor 2), resulting in a later Asr time.",
+    "crescentTitle": "Crescent Criteria",
+    "crescentBody": "The Islamic month begins at the sighting of the new crescent moon. Different authorities apply different visibility criteria: Umm al-Qura uses calculations for Mecca, ISNA uses astronomical calculations for North America, MABIMS uses altitude/elongation thresholds for Southeast Asia, and others use their own regional standards.",
+    "hijriTitle": "Hijri Calendar",
+    "hijriBody": "The Hijri calendar is a purely lunar calendar of 12 months. Astronomical calculations predict when the crescent should be visible, but actual sighting may differ by 1-2 days due to weather and local conditions. The tabular method uses a fixed arithmetic cycle as a fallback.",
+    "disclaimer": "This app provides astronomical calculations only. For religious rulings, consult your local authority."
+  },
+  "ramadan": {
+    "iftarIn": "Iftar in {countdown}",
+    "suhoorAt": "Suhoor ends at {time}",
+    "last10": "Last 10 Nights",
+    "oddNight": "Odd Night",
+    "ramadanDay": "Ramadan Day {day}",
+    "ramadanMubarak": "Ramadan Mubarak"
+  },
+  "converter": {
+    "title": "Date Converter",
+    "hijriToGregorian": "Hijri to Gregorian",
+    "gregorianToHijri": "Gregorian to Hijri",
+    "convert": "Convert",
+    "day": "Day",
+    "month": "Month",
+    "year": "Year",
+    "result": "Result",
+    "events": "Events on this date",
+    "noEvents": "No events on this date.",
+    "note": "Dates are based on {criterion} criterion and may vary by 1-2 days."
+  },
+  "cities": {
+    "trackedCities": "Tracked Cities",
+    "addCity": "Add City",
+    "removeCity": "Remove",
+    "maxCities": "Maximum 3 cities allowed.",
+    "switchTo": "Switch to {city}"
   },
   "common": {
     "loading": "Loading...",

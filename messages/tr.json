@@ -22,7 +22,8 @@
     "isha": "Yats\u0131",
     "noLocation": "Namaz vakitlerini g\u00F6rmek i\u00E7in konumunuzu ayarlay\u0131n",
     "detectLocation": "Konumumu bul",
-    "detecting": "Belirleniyor..."
+    "detecting": "Belirleniyor...",
+    "trustLine": "{convention} | {asr} Ikindi | {criterion} hilal"
   },
   "calendar": {
     "title": "Hicri Takvim",
@@ -58,7 +59,17 @@
     "enableCompass": "Pusulay\u0131 Etkinle\u015Ftir",
     "compassUnsupported": "Bu cihazda pusula mevcut de\u011Fil",
     "pointDevice": "Cihaz\u0131n\u0131z\u0131n \u00FCst k\u0131sm\u0131n\u0131 K\u0131ble'ye do\u011Fru tutun",
-    "noLocation": "\u00D6nce konumunuzu ayarlay\u0131n"
+    "noLocation": "\u00D6nce konumunuzu ayarlay\u0131n",
+    "calibrationTip": "Pusulay\u0131 kalibre etmek i\u00E7in cihaz\u0131n\u0131z\u0131 8 \u015Feklinde hareket ettirin.",
+    "accuracyDisclaimer": "Pusula okumalar\u0131 yakla\u015F\u0131kt\u0131r. Do\u011Fruluk i\u00E7in fiziksel bir pusula ile do\u011Frulay\u0131n.",
+    "cardinal_N": "Kuzey",
+    "cardinal_NE": "Kuzeydogu",
+    "cardinal_E": "Dogu",
+    "cardinal_SE": "Guneydogu",
+    "cardinal_S": "Guney",
+    "cardinal_SW": "Guneybat\u0131",
+    "cardinal_W": "Bat\u0131",
+    "cardinal_NW": "Kuzeybat\u0131"
   },
   "festivals": {
     "title": "Bayramlar",
@@ -87,9 +98,59 @@
     "crescentCriterion": "Hilal Kriteri",
     "language": "Dil",
     "theme": "Tema",
+    "searchCity": "Sehir veya ulke ara...",
+    "noCityFound": "Sehir bulunamadi. Konum tespitini kullanin.",
+    "presets": "Hazir",
+    "presetsHint": "Namaz yontemi ve hilal kriterini otomatik ayarlamak icin sehir secin.",
+    "allRegions": "Tumu",
     "themeLight": "A\u00E7\u0131k",
     "themeDark": "Koyu",
-    "themeSystem": "Sistem"
+    "themeSystem": "Sistem",
+    "aboutCalculations": "Hesaplamalar Hakk\u0131nda",
+    "dateConverter": "Hicri-Miladi D\u00F6n\u00FC\u015Ft\u00FCr\u00FCc\u00FC"
+  },
+  "about": {
+    "title": "Hesaplamalar Hakk\u0131nda",
+    "convention": "Y\u00F6ntem",
+    "fajrAngle": "Fecir",
+    "ishaAngle": "Yats\u0131",
+    "prayerTimesTitle": "Namaz Vakitleri",
+    "prayerTimesBody": "Namaz vakitleri g\u00FCne\u015F geometrisi kullan\u0131larak hesaplan\u0131r. Fecir ve Yats\u0131, g\u00FCne\u015Fin ufkun alt\u0131ndaki a\u00E7\u0131s\u0131na ba\u011Fl\u0131d\u0131r ve bu a\u00E7\u0131 y\u00F6nteme g\u00F6re de\u011Fi\u015Fir. Farkl\u0131 kurulu\u015Flar biraz farkl\u0131 a\u00E7\u0131lar kullan\u0131r, bu da y\u00F6ntemler aras\u0131nda birka\u00E7 dakikal\u0131k farka yol a\u00E7ar.",
+    "asrTitle": "Ikindi Hesaplamas\u0131",
+    "asrBody": "\u015Eafii y\u00F6nteminde Ikindi, bir cismin g\u00F6lgesi y\u00FCksekli\u011Fine e\u015Fit oldu\u011Funda ba\u015Flar, \u00F6\u011Fle g\u00F6lgesi dahil (g\u00F6lge fakt\u00F6r\u00FC 1). Hanefi y\u00F6nteminde ise g\u00F6lge y\u00FCksekli\u011Finin iki kat\u0131na e\u015Fit oldu\u011Funda ba\u015Flar, \u00F6\u011Fle g\u00F6lgesi dahil (g\u00F6lge fakt\u00F6r\u00FC 2), bu da daha ge\u00E7 bir Ikindi vakti verir.",
+    "crescentTitle": "Hilal Kriterleri",
+    "crescentBody": "\u0130slam ay\u0131 yeni hilalin g\u00F6r\u00FClmesiyle ba\u015Flar. Farkl\u0131 otoriteler farkl\u0131 g\u00F6r\u00FCn\u00FCrl\u00FCk kriterleri uygular: Umm al-Qura Mekke i\u00E7in hesaplamalar kullan\u0131r, ISNA Kuzey Amerika i\u00E7in astronomik hesaplamalar, MABIMS G\u00FCneydo\u011Fu Asya i\u00E7in y\u00FCkseklik/uzanma e\u015Fikleri kullan\u0131r ve di\u011Ferleri kendi b\u00F6lgesel standartlar\u0131n\u0131 kullan\u0131r.",
+    "hijriTitle": "Hicri Takvim",
+    "hijriBody": "Hicri takvim 12 ayl\u0131k tamamen ay takvimi olan bir takvimdir. Astronomik hesaplamalar hilalin ne zaman g\u00F6r\u00FClebilece\u011Fini tahmin eder, ancak ger\u00E7ek g\u00F6zlem hava durumu ve yerel ko\u015Fullar nedeniyle 1-2 g\u00FCn farkl\u0131 olabilir. Tablo y\u00F6ntemi sabit bir aritmetik d\u00F6ng\u00FCy\u00FC yedek olarak kullan\u0131r.",
+    "disclaimer": "Bu uygulama yaln\u0131zca astronomik hesaplamalar sunar. Dini h\u00FCk\u00FCmler i\u00E7in yerel din otoritenize dan\u0131\u015F\u0131n."
+  },
+  "ramadan": {
+    "iftarIn": "Iftara {countdown}",
+    "suhoorAt": "Sahur {time} de sona erer",
+    "last10": "Son 10 Gece",
+    "oddNight": "Tek Gece",
+    "ramadanDay": "Ramazan\u0131n {day}. G\u00FCn\u00FC",
+    "ramadanMubarak": "Ramazan M\u00FCbarek"
+  },
+  "converter": {
+    "title": "Tarih D\u00F6n\u00FC\u015Ft\u00FCr\u00FCc\u00FC",
+    "hijriToGregorian": "Hicri'den Miladi'ye",
+    "gregorianToHijri": "Miladi'den Hicri'ye",
+    "convert": "D\u00F6n\u00FC\u015Ft\u00FCr",
+    "day": "G\u00FCn",
+    "month": "Ay",
+    "year": "Y\u0131l",
+    "result": "Sonu\u00E7",
+    "events": "Bu tarihteki etkinlikler",
+    "noEvents": "Bu tarihte etkinlik yok.",
+    "note": "Tarihler {criterion} kriterine dayanmaktad\u0131r ve 1-2 g\u00FCn farkl\u0131l\u0131k g\u00F6sterebilir."
+  },
+  "cities": {
+    "trackedCities": "Takip Edilen Sehirler",
+    "addCity": "Sehir Ekle",
+    "removeCity": "Kaldir",
+    "maxCities": "En fazla 3 sehre izin verilir.",
+    "switchTo": "{city} sehrine ge\u00E7"
   },
   "common": {
     "loading": "Y\u00FCkleniyor...",
