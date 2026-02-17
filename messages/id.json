@@ -1,7 +1,7 @@
 {
   "app": {
     "name": "Al Tariq",
-    "tagline": "Teman sholat harian Anda"
+    "tagline": "Teman shalat harian Anda"
   },
   "nav": {
     "today": "Hari Ini",
@@ -11,16 +11,16 @@
     "settings": "Pengaturan"
   },
   "today": {
-    "nextPrayer": "Sholat berikutnya",
+    "nextPrayer": "Shalat berikutnya",
     "inTime": "{prayer} dalam {time}",
-    "allPrayersPast": "Semua sholat selesai",
+    "allPrayersPast": "Semua shalat selesai",
     "fajr": "Subuh",
     "sunrise": "Syuruq",
     "dhuhr": "Dzuhur",
     "asr": "Ashar",
     "maghrib": "Maghrib",
     "isha": "Isya",
-    "noLocation": "Atur lokasi Anda untuk melihat waktu sholat",
+    "noLocation": "Atur lokasi Anda untuk melihat waktu shalat",
     "detectLocation": "Deteksi lokasi saya",
     "detecting": "Mendeteksi...",
     "trustLine": "{convention} | {asr} Ashar | {criterion} hilal"
@@ -93,7 +93,7 @@
     "location": "Lokasi",
     "detectLocation": "Deteksi lokasi saya",
     "detecting": "Mendeteksi...",
-    "prayerConvention": "Metode Waktu Sholat",
+    "prayerConvention": "Metode Waktu Shalat",
     "asrMethod": "Perhitungan Ashar",
     "shafii": "Syafii (standar)",
     "hanafi": "Hanafi (lebih siang)",
@@ -103,7 +103,7 @@
     "searchCity": "Cari kota atau negara...",
     "noCityFound": "Kota tidak ditemukan. Gunakan deteksi lokasi.",
     "presets": "Prasetel",
-    "presetsHint": "Pilih kota untuk mengatur konvensi salat dan kriteria hilal secara otomatis.",
+    "presetsHint": "Pilih kota untuk mengatur konvensi shalat dan kriteria hilal secara otomatis.",
     "allRegions": "Semua",
     "themeLight": "Terang",
     "themeDark": "Gelap",
@@ -117,8 +117,8 @@
     "convention": "Konvensi",
     "fajrAngle": "Subuh",
     "ishaAngle": "Isya",
-    "prayerTimesTitle": "Waktu Sholat",
-    "prayerTimesBody": "Waktu sholat dihitung menggunakan geometri matahari. Subuh dan Isya bergantung pada sudut matahari di bawah cakrawala, yang bervariasi menurut konvensi. Organisasi yang berbeda menggunakan sudut yang sedikit berbeda, menghasilkan perbedaan beberapa menit antar metode.",
+    "prayerTimesTitle": "Waktu Shalat",
+    "prayerTimesBody": "Waktu shalat dihitung menggunakan geometri matahari. Subuh dan Isya bergantung pada sudut matahari di bawah cakrawala, yang bervariasi menurut konvensi. Organisasi yang berbeda menggunakan sudut yang sedikit berbeda, menghasilkan perbedaan beberapa menit antar metode.",
     "asrTitle": "Perhitungan Ashar",
     "asrBody": "Metode Syafii memulai Ashar ketika bayangan benda sama dengan tingginya ditambah bayangan saat tengah hari (faktor bayangan 1). Metode Hanafi memulai ketika bayangan sama dengan dua kali tinggi benda ditambah bayangan tengah hari (faktor bayangan 2), menghasilkan waktu Ashar yang lebih siang.",
     "crescentTitle": "Kriteria Hilal",
