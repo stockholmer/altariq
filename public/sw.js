@@ -1,4 +1,4 @@
-const CACHE_NAME = 'altariq-v1';
+const CACHE_NAME = 'altariq-v2';
 const STATIC_ASSETS = ['/', '/en', '/manifest.json'];
 
 // Install: pre-cache app shell
@@ -21,22 +21,6 @@ self.addEventListener('activate', (event) => {
 
 // Fetch strategy
 self.addEventListener('fetch', (event) => {
-  const url = new URL(event.request.url);
-
-  // API calls: network-first with cache fallback
-  if (url.hostname.includes('supabase.co')) {
-    event.respondWith(
-      fetch(event.request)
-        .then((response) => {
-          const clone = response.clone();
-          caches.open(CACHE_NAME).then((cache) => cache.put(event.request, clone));
-          return response;
-        })
-        .catch(() => caches.match(event.request))
-    );
-    return;
-  }
-
   // Static assets: cache-first
   if (
     event.request.destination === 'script' ||
@@ -50,7 +34,7 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // Navigation: network-first
+  // Navigation: network-first with cache fallback
   if (event.request.mode === 'navigate') {
     event.respondWith(
       fetch(event.request).catch(() => caches.match(event.request))
