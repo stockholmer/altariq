@@ -1,26 +1,8 @@
-import { apiFetch } from './client';
+import { computePrayerTimes, computeQibla } from '../compute/prayer-times';
 import type { PrayerTimes } from '@/lib/types/prayer';
 import type { AsrMethod, PrayerConvention } from '@/lib/types/settings';
-
-// Actual API response shape (nested)
-interface PrayerApiResponse {
-  date: string;
-  location: { lat: number; lon: number };
-  timezone: string;
-  convention: string;
-  convention_id: string;
-  asr_method: string;
-  times: {
-    fajr: string;
-    sunrise: string;
-    dhuhr: string;
-    asr: string;
-    maghrib: string;
-    isha: string;
-    midnight: string;
-  };
-  qibla: { direction: number; distance_km: number };
-}
+import { PRAYER_CONVENTIONS } from '../compute/constants';
+import type { PrayerConventionId } from '../compute/types';
 
 export async function fetchPrayerTimes(params: {
   lat: number;
@@ -30,26 +12,27 @@ export async function fetchPrayerTimes(params: {
   convention?: PrayerConvention;
   asr?: AsrMethod;
 }): Promise<PrayerTimes> {
-  const raw = await apiFetch<PrayerApiResponse>('islamic-calendar/prayers', {
-    lat: params.lat,
-    lon: params.lon,
-    tz: params.tz,
-    date: params.date,
-    convention: params.convention,
-    asr: params.asr,
-  });
+  const dateStr = params.date ?? new Date().toISOString().split('T')[0];
+  const conventionId = (params.convention ?? 'mwl') as PrayerConventionId;
+  const asrMethod = params.asr ?? 'shafii';
+
+  const times = computePrayerTimes(dateStr, params.lat, params.lon, params.tz, conventionId, asrMethod);
+  const qibla = computeQibla(params.lat, params.lon);
+
+  const conventionMeta = PRAYER_CONVENTIONS[conventionId];
+
   return {
-    fajr: raw.times.fajr,
-    sunrise: raw.times.sunrise,
-    dhuhr: raw.times.dhuhr,
-    asr: raw.times.asr,
-    maghrib: raw.times.maghrib,
-    isha: raw.times.isha,
-    qibla_bearing: raw.qibla.direction,
-    date: raw.date,
-    timezone: raw.timezone,
-    convention: raw.convention,
-    asr_method: raw.asr_method,
-    location: raw.location,
+    fajr: times.fajr ?? '',
+    sunrise: times.sunrise ?? '',
+    dhuhr: times.dhuhr ?? '',
+    asr: times.asr ?? '',
+    maghrib: times.maghrib ?? '',
+    isha: times.isha ?? '',
+    qibla_bearing: qibla.direction,
+    date: dateStr,
+    timezone: params.tz,
+    convention: conventionMeta?.name ?? conventionId,
+    asr_method: asrMethod,
+    location: { lat: params.lat, lon: params.lon },
   };
 }
