@@ -30,6 +30,8 @@ export default async function LocaleLayout({
         <meta name="theme-color" content="#1a1412" media="(prefers-color-scheme: dark)" />
         <link rel="manifest" href="/manifest.json" />
         <link rel="apple-touch-icon" href="/icons/icon-192.png" />
+        <link rel="icon" href="/icons/icon.svg" type="image/svg+xml" />
+        <link rel="icon" href="/icons/icon-192.png" sizes="192x192" type="image/png" />
       </head>
       <body>
         <NextIntlClientProvider locale={locale} messages={messages}>

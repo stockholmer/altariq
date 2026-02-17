@@ -2,7 +2,7 @@
   "name": "Al Tariq - Prayer Times & Islamic Calendar",
   "short_name": "Al Tariq",
   "description": "Your daily prayer companion. Prayer times, Qibla direction, Hijri calendar, and Islamic festivals.",
-  "start_url": "/en",
+  "start_url": "/",
   "display": "standalone",
   "background_color": "#faf6f1",
   "theme_color": "#c4956a",
