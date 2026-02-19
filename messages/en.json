@@ -56,7 +56,7 @@
   },
   "qibla": {
     "title": "Qibla Direction",
-    "bearing": "Bearing: {degrees}",
+    "bearing": "Bearing: {degrees}\u00B0",
     "distance": "{km} km to Kaaba",
     "enableCompass": "Enable Compass",
     "compassUnsupported": "Compass not available on this device",

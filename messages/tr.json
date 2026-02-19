@@ -130,7 +130,7 @@
   "ramadan": {
     "iftar": "İftar",
     "iftarIn": "İftara {countdown}",
-    "suhoorAt": "Sahur {time} de sona erer",
+    "suhoorAt": "Sahur {time}'de sona erer",
     "last10": "Son 10 Gece",
     "oddNight": "Tek Gece",
     "ramadanDay": "Ramazanın {day}. Günü",
