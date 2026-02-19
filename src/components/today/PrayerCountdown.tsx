@@ -27,11 +27,8 @@ export default function PrayerCountdown({ nextPrayer, nextTime, timezone }: Prop
     );
   }
 
-  // During Ramadan, show "Iftar" instead of "Maghrib"
+  // During Ramadan fasting hours, apply special styling when next prayer is Maghrib
   const isIftarCountdown = ramadan.active && ramadan.beforeIftar && nextPrayer === 'maghrib';
-  const displayLabel = isIftarCountdown
-    ? tRamadan('iftarIn', { countdown: '' }).replace(/\s*$/, '').replace(/\s+in\s*$/, '')
-    : t(nextPrayer);
 
   return (
     <motion.div
@@ -51,8 +48,13 @@ export default function PrayerCountdown({ nextPrayer, nextTime, timezone }: Prop
       <p className={`relative mt-1 text-3xl font-bold ${
         isIftarCountdown ? 'text-fasting' : 'text-[var(--accent)]'
       }`}>
-        {isIftarCountdown ? 'Iftar' : t(nextPrayer)}
+        {t(nextPrayer)}
       </p>
+      {isIftarCountdown && (
+        <p className="relative mt-0.5 text-xs font-medium uppercase tracking-wider text-fasting/70">
+          {tRamadan('iftar')}
+        </p>
+      )}
       <p className="relative mt-2 font-mono text-2xl tabular-nums">
         {formatCountdown(secondsLeft)}
       </p>

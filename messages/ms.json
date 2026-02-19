@@ -128,6 +128,7 @@
     "disclaimer": "Aplikasi ini menyediakan pengiraan astronomi sahaja. Untuk hukum agama, rujuk pihak berkuasa tempatan anda."
   },
   "ramadan": {
+    "iftar": "Iftar",
     "iftarIn": "Iftar dalam {countdown}",
     "suhoorAt": "Sahur berakhir pada {time}",
     "last10": "10 Malam Terakhir",

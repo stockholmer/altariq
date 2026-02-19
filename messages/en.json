@@ -128,6 +128,7 @@
     "disclaimer": "This app provides astronomical calculations only. For religious rulings, consult your local authority."
   },
   "ramadan": {
+    "iftar": "Iftar",
     "iftarIn": "Iftar in {countdown}",
     "suhoorAt": "Suhoor ends at {time}",
     "last10": "Last 10 Nights",

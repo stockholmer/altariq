@@ -128,6 +128,7 @@
     "disclaimer": "Bu uygulama yalnızca astronomik hesaplamalar sunar. Dini hükümler için yerel din otoritenize danışın."
   },
   "ramadan": {
+    "iftar": "İftar",
     "iftarIn": "İftara {countdown}",
     "suhoorAt": "Sahur {time} de sona erer",
     "last10": "Son 10 Gece",
