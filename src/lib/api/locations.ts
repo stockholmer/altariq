@@ -20,7 +20,7 @@ function mapRegion(region: string): LocationRegion {
 }
 
 /** Map city region to a default prayer convention */
-function defaultConvention(region: string): string {
+export function defaultConvention(region: string): string {
   const mapping: Record<string, string> = {
     middle_east: 'makkah',
     south_asia: 'karachi',
@@ -38,7 +38,7 @@ function defaultConvention(region: string): string {
 }
 
 /** Map city region to a default crescent criterion */
-function defaultCriterion(region: string): string {
+export function defaultCriterion(region: string): string {
   const mapping: Record<string, string> = {
     middle_east: 'umm_al_qura',
     south_asia: 'pakistan',

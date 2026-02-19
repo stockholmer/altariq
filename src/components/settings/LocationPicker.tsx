@@ -9,6 +9,7 @@ import { MapPin, Loader2, Search, X, Star, Globe } from 'lucide-react';
 import { CITIES, type City } from '@/lib/data/cities';
 import type { PresetLocation, LocationRegion } from '@/lib/types/location';
 import type { CrescentCriterion, PrayerConvention } from '@/lib/types/settings';
+import { defaultCriterion, defaultConvention } from '@/lib/api/locations';
 
 const REGION_LABELS: Record<LocationRegion, string> = {
   arabian_peninsula: 'Arabian Peninsula',
@@ -111,6 +112,8 @@ export default function LocationPicker() {
       country: city.country,
       timezone: city.timezone,
     });
+    setCriterion(defaultCriterion(city.region) as CrescentCriterion);
+    setConvention(defaultConvention(city.region) as PrayerConvention);
     setQuery('');
     setOpen(false);
   }
