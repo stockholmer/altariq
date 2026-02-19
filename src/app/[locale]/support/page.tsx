@@ -3,7 +3,7 @@
 import { useTranslations } from 'next-intl';
 import { Heart } from 'lucide-react';
 
-const SUPPORT_LINK = 'https://buy.stripe.com/placeholder'; // Replace with actual Stripe/LemonSqueezy link
+const SUPPORT_LINK = ''; // Configure with actual payment link before enabling
 
 export default function SupportPage() {
   const t = useTranslations('support');
@@ -17,15 +17,22 @@ export default function SupportPage() {
           {t('description')}
         </p>
 
-        <a
-          href={SUPPORT_LINK}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center justify-center gap-2 rounded-lg bg-[var(--accent)] px-4 py-3 text-sm font-medium text-white transition-opacity hover:opacity-90"
-        >
-          <Heart size={16} />
-          {t('button')}
-        </a>
+        {SUPPORT_LINK ? (
+          <a
+            href={SUPPORT_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center gap-2 rounded-lg bg-[var(--accent)] px-4 py-3 text-sm font-medium text-white transition-opacity hover:opacity-90"
+          >
+            <Heart size={16} />
+            {t('button')}
+          </a>
+        ) : (
+          <span className="flex items-center justify-center gap-2 rounded-lg bg-[var(--accent)]/50 px-4 py-3 text-sm font-medium text-white/70 cursor-not-allowed">
+            <Heart size={16} />
+            {t('button')}
+          </span>
+        )}
       </div>
 
       <p className="px-1 text-center text-xs text-[var(--text-2)]/70">

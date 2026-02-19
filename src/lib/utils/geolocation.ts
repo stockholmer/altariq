@@ -14,9 +14,13 @@ export async function detectLocation(): Promise<LocationData> {
 
   const { latitude: lat, longitude: lon } = pos.coords;
 
+  // Reduce precision to ~1 km for privacy before sending to third-party
+  const coarseLat = Math.round(lat * 100) / 100;
+  const coarseLon = Math.round(lon * 100) / 100;
+
   // Reverse geocode with OpenStreetMap Nominatim (free, no key)
   const res = await fetch(
-    `https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lon}&format=json&zoom=10`,
+    `https://nominatim.openstreetmap.org/reverse?lat=${coarseLat}&lon=${coarseLon}&format=json&zoom=10`,
     { headers: { 'User-Agent': 'altariq-pwa/1.0' } }
   );
   const data = await res.json();
